@@ -1,0 +1,10 @@
+[33m[nodemon] 1.18.5[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node server.js`[39m
+Example app listening on port 3000!
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+Example app listening on port 3000!
+{}
+Terminate batch job (Y/N)? Terminate batch job (Y/N)? 

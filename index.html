@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+</script>
+<link rel="stylesheet" type="text/css" href="index.css"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<script defer src="https://use.fontawesome.com/releases/v5.4.1/js/all.js"
+        integrity="sha384-L469/ELG4Bg9sDQbl0hvjMq8pOcqFgkSpwhwnslzvVVGpDjYJ6wJJyYjvG3u8XW7"
+        crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js">
+</script>
+<script src="index.js">
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simplest ever chat</title>
+</head>
+<body>
+<div class="wrapper-main">
+    <div class="container-title">
+        <div class="container-data container-data-title">
+            <div class="container-title-menu-caption">
+                <span class="icon-holder">Simplest ever chat</span>
+            </div>
+            <div class="container-title-menu-button">
+                <span class="icon-holder">
+                    <i class="fas fa-home"></i>
+                </span>
+            </div>
+            <div class="container-title-menu-button">
+                <span class="icon-holder">
+                <i class="far fa-comments"></i>
+                </span>
+            </div>
+            <div class="container-title-menu-button">
+                <span class="icon-holder">
+                    <i class="fas fa-info-circle"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="container-menu-left">
+        <div class="container-data">
+            search
+        </div>
+        <div class="container-data">
+            calendar
+        </div>
+    </div>
+    <div class="container-main">
+        <div class="container-data">
+            <div id="form-send-to-server">
+                <label for="message-to-send">send message</label>
+                <input type="text" id="message-to-send">
+                <button id="send-message-to-server">send</button>
+                <!--<button id="get-messages-from-server">get</button>-->
+            </div>
+            <div id="messages-got-from-server">
+            </div>
+            <div id="status-got-from-server">
+            </div>
+        </div>
+    </div>
+    <div class="container-menu-right">
+        <div class="container-data">
+            login
+        </div>
+        <div class="container-data">
+            word cloud
+        </div>
+        <div class="container-data">
+            ad
+        </div>
+    </div>
+    <div class="container-footer">
+        <div class="container-data">
+            copyright... etc...
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+body {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+}
+
+.wrapper-main {
+    display: grid;
+    grid-template-columns: 196px auto 196px;
+    grid-template-rows: 64px auto 64px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: visible;
+}
+
+.container-title {
+    grid-column: 1 / span 3;
+}
+
+[class|=container] {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-footer {
+    grid-column: 1 / span 3;
+}
+
+.container-data {
+    flex: 1 0 auto;
+    background: #f7f7f7;
+    border: solid 1px #e5e5e5;
+    border-radius: 4px;
+    margin: 4px;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.container-main {
+    flex: 1 0 auto;
+}
+
+.container-title-menu-caption {
+    flex: 1 0 auto;
+}
+
+.container-title-menu-button {
+    flex: 0 0 auto;
+    margin: 4px;
+}
+
+.icon-holder {
+    font-size: 40px;
+    color: #d41e34;
+}
+
+[class|=container-menu] {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#form-send-to-server,
+#status-got-from-server{
+    flex: 0 1 auto;
+}
+
+#messages-got-from-server{
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+#form-send-to-server {
+    width: 100%;
+    align-self: stretch;
+    flex:  0 1 auto;
+
+}
+
+.container-data-title{
+    flex-direction: row;
+}
+
+.msg-echo{
+    color: gray;
+    font-style: italic;
+}
