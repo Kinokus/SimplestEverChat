@@ -49,9 +49,9 @@ jQuery(document).ready(function ($) {
                 }
             }
             if(msg.add) {
-                $('#messages-got-from-server')
+                $('#messages-got-from-server > .messages-list')
                     .append(`
-                            <span>
+                            <span class="msg-string">
                             <pre class="msg-time">[${msg.time}]</pre>
                             <span class="${msg.userClass}">${msg.name}</span>
                             <span class="${msg.class}">${msg.text}</span>

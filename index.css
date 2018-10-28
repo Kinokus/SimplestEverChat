@@ -71,18 +71,21 @@ body {
 #form-send-to-server,
 #status-got-from-server{
     flex: 0 1 auto;
+    height: 32px;
+    background: antiquewhite;
+    width: 100%;
 }
 
 #messages-got-from-server{
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    position: relative;
+
 }
 #form-send-to-server {
-    width: 100%;
     align-self: stretch;
-    flex:  0 1 auto;
-
 }
 
 .container-data-title{
@@ -101,4 +104,19 @@ body {
 
 .msg-time {
     display: inline;
+}
+
+.msg-string{
+    display: block;
+}
+
+.container-main > .container-data{
+
+}
+
+#messages-got-from-server > .messages-list{
+    position: absolute;
+    height: 100%;
+    overflow: auto;
+    width: 100%;
 }
