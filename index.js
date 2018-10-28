@@ -19,6 +19,7 @@ jQuery(document).ready(function ($) {
             // todo templates
             // todo private messages
             // todo add color to message
+            // todo send nick
             switch (msg.event) {
                 case '' : {
                     break
