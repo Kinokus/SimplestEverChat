@@ -5,22 +5,7 @@ jQuery(document).ready(function ($) {
 
         socket.send($('#message-to-send').val());
 
-        // $.post('message-from-ui', {message:$('#message-to-send').val()}, function (data) {
-        //     $('#status-got-from-server').html('<div>' + data.status + '</div>');
-        //     getMessages();
-        // })
     };
-
-    // let getMessages = function () {
-    //     $.get('messages-from-server', function (data) {
-    //         console.log(data);
-    //         $('#messages-got-from-server').empty();
-    //         data.forEach(function (msg) {
-    //             $('#messages-got-from-server')
-    //                 .append('<span>' + msg.message + '</span>');
-    //         })
-    //     })
-    // };
 
     socket.on('connect', function () {
 
@@ -33,8 +18,9 @@ jQuery(document).ready(function ($) {
                 case '' : {
                     break
                 }
-                case 'message' : {
-                    $('#messages-got-from-server').append('<span>' + msg.message + '</span>');
+                case 'messageSent' : {
+                    // todo add time, status, whatever
+                    $('#messages-got-from-server').append('<span class="msg-main">' + msg.text + '</span>');
                     break
                 }
                 case 'userSplit' : {
@@ -50,7 +36,8 @@ jQuery(document).ready(function ($) {
                     break
                 }
                 case 'messageReceived' : {
-                    $('#messages-got-from-server').append('<span class="msg-echo">' + msg.message + '</span>');
+                    // todo add time, status, whatever
+                    $('#messages-got-from-server').append('<span class="msg-echo">' + msg.text + '</span>');
                     break
                 }
                 default: {

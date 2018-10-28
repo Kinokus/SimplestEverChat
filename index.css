@@ -93,3 +93,8 @@ body {
     color: gray;
     font-style: italic;
 }
+
+.msg-main{
+    color: #d41e34;
+    font-style: normal;
+}
