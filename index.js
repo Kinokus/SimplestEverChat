@@ -27,21 +27,28 @@ jQuery(document).ready(function ($) {
                     msg.userClass = 'user-main';
                     msg.class = 'msg-main';
                     msg.add = true;
+                    msg.status = 'message got';
                     break
                 }
                 case 'userSplit' : {
+                    console.log(msg);
+                    msg.status = 'user logout';
                     break
                 }
                 case 'userJoined' : {
+                    console.log(msg);
+                    msg.status = 'user joined';
                     break
                 }
                 case 'connected' : {
+                    console.log(msg);
                     break
                 }
                 case 'messageReceived' : {
                     msg.userClass = 'user-echo';
                     msg.class = 'msg-echo';
                     msg.add = true;
+                    msg.status = 'message recieved by server from';
                     break
                 }
                 default: {
@@ -58,6 +65,17 @@ jQuery(document).ready(function ($) {
                             </span>
                         `);
             }
+            if(msg.status){
+                $('#status-got-from-server')
+                    .html(`
+                            <span class="msg-string">
+                            <pre class="msg-time">[${msg.time}]</pre>
+                            <span class="${msg.class}">${msg.status}</span>
+                            <span class="${msg.userClass}">${msg.name}</span>
+                            </span>
+                        `)
+            }
+
 
 
         });
