@@ -98,3 +98,7 @@ body {
     color: #d41e34;
     font-style: normal;
 }
+
+.msg-time {
+    display: inline;
+}

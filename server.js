@@ -7,8 +7,7 @@ const io = require('socket.io').listen(socketPort, function (data) {
     console.log(`Example socket listening on port ${socketPort}!`)
 });
 
-let globalMessages = [];
-
+// todo sync messages
 
 io.sockets.on('connection', function (socket) {
     const ID = (socket.id).toString().substr(0, 5); // simplest name

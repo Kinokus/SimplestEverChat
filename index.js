@@ -8,42 +8,55 @@ jQuery(document).ready(function ($) {
     };
 
     socket.on('connect', function () {
+        let myId = (socket.id).toString().substr(0, 5);
+        $('#name-current').text(myId);
 
         $('#send-message-to-server').click(sendMessage);
-        // $('#get-messages-from-server').click(getMessages);
 
         socket.on('message', function (msg) {
-            console.log(msg);
+            // todo add time, status, whatever
+            // todo check duplicated messages
+            // todo templates
+            // todo private messages
+            // todo add color to message
             switch (msg.event) {
                 case '' : {
                     break
                 }
                 case 'messageSent' : {
-                    // todo add time, status, whatever
-                    $('#messages-got-from-server').append('<span class="msg-main">' + msg.text + '</span>');
+                    msg.userClass = 'user-main';
+                    msg.class = 'msg-main';
+                    msg.add = true;
                     break
                 }
                 case 'userSplit' : {
-
                     break
                 }
                 case 'userJoined' : {
-
                     break
                 }
                 case 'connected' : {
-
                     break
                 }
                 case 'messageReceived' : {
-                    // todo add time, status, whatever
-                    $('#messages-got-from-server').append('<span class="msg-echo">' + msg.text + '</span>');
+                    msg.userClass = 'user-echo';
+                    msg.class = 'msg-echo';
+                    msg.add = true;
                     break
                 }
                 default: {
-
                     break
                 }
+            }
+            if(msg.add) {
+                $('#messages-got-from-server')
+                    .append(`
+                            <span>
+                            <pre class="msg-time">[${msg.time}]</pre>
+                            <span class="${msg.userClass}">${msg.name}</span>
+                            <span class="${msg.class}">${msg.text}</span>
+                            </span>
+                        `);
             }
 
 
