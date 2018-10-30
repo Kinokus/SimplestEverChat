@@ -16,9 +16,18 @@ io.sockets.on('connection', function (socket) {
     socket.broadcast.json.send({'event': 'userJoined', 'name': ID, 'time': time});
 
     socket.on('message', function (msg) {
+        let text = msg.text || msg;
+        let nickFrom = msg.nick || 'anonimous';
         const time = (new Date).toLocaleTimeString();
-        socket.broadcast.json.send({'event': 'messageSent', 'name': ID, 'text': msg, 'time': time});
-        socket.json.send({'event': 'messageReceived', 'name': ID, 'text': msg, 'time': time})
+        let message = {};
+        message.name = ID;
+        message.text = text;
+        message.time = time;
+        message.nickFrom = nickFrom;
+        message.event = 'messageSent';
+        socket.broadcast.json.send(message);
+        message.event = 'messageReceived';
+        socket.json.send(message);
     });
 
     socket.on('disconnect', function() {
