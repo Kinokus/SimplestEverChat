@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "express": "^4.16.4",
+    "json-stringify-safe": "^5.0.1",
+    "nodemon": "^1.18.5",
     "socket.io": "^2.1.1"
   },
   "description": "simplest ever chat"

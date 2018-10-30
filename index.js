@@ -3,7 +3,11 @@ jQuery(document).ready(function ($) {
   const socket = io.connect(window.location.hostname + ':3001');
   let sendMessage = function () {
     
-    socket.send($('#message-to-send').val());
+    let message = {};
+    message.text = $('#message-to-send').val();
+    message.nickFrom = $('#nick-current').val();
+    
+    socket.send(message);
     $('#message-to-send').val('');
   };
   
@@ -71,7 +75,7 @@ jQuery(document).ready(function ($) {
           .append(`
                             <span class="msg-string">
                             <pre class="msg-time">[${msg.time}]</pre>
-                            <span class="${msg.userClass}">${msg.name}</span>
+                            <span class="${msg.userClass}">${msg.nickFrom || msg.name}</span>
                             <span class="${msg.class}">${msg.text}</span>
                             </span>
                         `);
@@ -85,6 +89,10 @@ jQuery(document).ready(function ($) {
                             <span class="${msg.userClass}">${msg.name}</span>
                             </span>
                         `)
+      }
+      
+      if(msg.nick){
+      
       }
       
       

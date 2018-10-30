@@ -7,7 +7,7 @@ body {
 
 .wrapper-main {
     display: grid;
-    grid-template-columns: 196px auto 196px;
+    grid-template-columns: 240px auto 240px;
     grid-template-rows: 64px auto 64px;
     margin: 0;
     padding: 0;
@@ -119,4 +119,9 @@ body {
     height: 100%;
     overflow: auto;
     width: 100%;
+}
+
+.label-name {
+    display: inline-block;
+    width: 100px;
 }
