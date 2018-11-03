@@ -125,3 +125,8 @@ body {
     display: inline-block;
     width: 100px;
 }
+
+
+#nick-current{
+    width: 100%;
+}
