@@ -3,7 +3,7 @@
     "express": "^4.16.4",
     "json-stringify-safe": "^5.0.1",
     "nodemon": "^1.18.5",
-    "socket.io": "^2.1.1"
+    "socket.io": "^2.4.0"
   },
   "description": "simplest ever chat"
 }
